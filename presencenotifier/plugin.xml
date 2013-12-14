@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin>
+    <class>com.wixet.openfire.plugin.PresenceNotifierPlugin</class>
+    <name>Presence notifier</name>
+    <description>Notify to external server the presence events</description>
+    <author>Alvaro Garcia</author>
+    <version>1.0</version>
+    <date>12/13/2013</date>
+    <minServerVersion>3.5.1</minServerVersion>
+    
+    <adminconsole>		
+        <tab id="tab-server">
+            <sidebar id="sidebar-server-settings">
+                <item id="presence-notifier" name="Pesence notifier" url="presence-notifier.jsp"
+                     description="Click to manage the presence notifier" />
+            </sidebar>
+        </tab>
+    </adminconsole>
+
+</plugin>

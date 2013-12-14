@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Presence Notifier Plugin Readme</title>
+    <style type="text/css">
+        BODY {
+            font-size : 100%;
+        }
+        BODY, TD, TH {
+            font-family : tahoma, verdana, arial, helvetica, sans-serif;
+            font-size : 0.8em;
+        }
+        H2 {
+             font-size : 10pt;
+             font-weight : bold;
+        }
+        A:hover {
+            text-decoration : none;
+        }
+        H1 {
+            font-family : tahoma, arial, helvetica, sans-serif;
+            font-size : 1.4em;
+            font-weight: bold;
+            border-bottom : 1px #ccc solid;
+            padding-bottom : 2px;
+        }
+
+        TT {
+            font-family : courier new;
+            font-weight : bold;
+            color : #060;
+        }
+        PRE {
+            font-family : courier new;
+            font-size : 100%;
+        }
+        #datatable TH {
+            color : #fff;
+            background-color : #2A448C;
+            text-align : left;
+        }
+        #datatable TD {
+            background-color : #FAF6EF;
+        }
+        #datatable .name {
+            background-color : #DCE2F5;
+        }
+    </style>
+</head>
+<body>
+
+<h1>
+Presence Notifier Plugin Readme
+</h1>
+
+<h2>Overview</h2>
+
+<p>
+This plugin allows notify to an external server when an user goes to online or offline. It could be useful if you need to do searches (or whatever) in your own database out from openfire (a webpage, search engine, etc)
+
+</p>
+
+<h2>Configuration</h2>
+
+You have to configure:
+<ul>
+	<li>
+		Destination url: The url where your external server are listening
+	</li>
+	<li>
+		Token: A secret token that only are known by the server and openfire
+	</li>
+</ul>
+
+The plugin will add as get parameters the token, username and state. The state are represented as "online=true|false"
+
+
+<h2>Example</h2>
+Destination url: http://miserver.com/chatNotifier<br>
+Token: aabjdjk3<br>
+The user "enjuto" starts session.<br>
+<br>
+The full URI will be: <br>
+<textarea cols="100">http://miserver.com/chatNotifier?token=aabjdjk3&user=enjuto&online=true</textarea><br>
+<br>
+<br>
+Now the user "mojamuto" closes session<br>
+<textarea cols="100">http://miserver.com/chatNotifier?token=aabjdjk3&user=mojamuto&online=false</textarea><br>
+
+
+
+</body>
+</html>
